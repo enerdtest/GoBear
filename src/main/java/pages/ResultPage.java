@@ -31,7 +31,7 @@ public class ResultPage extends BasePage{
     @FindBy(xpath = "//span[@class='value']")
     WebElement getPriceText;
 
-    @FindBy(xpath = "//label[contains(text(),'annual trip ')]")
+    @FindBy(xpath = "//div[@data-gb-trip-types='annual']")
     WebElement radioAnualTrip;
 
     @FindBy(xpath = "//label[contains(text(),'Pacific Cross ')]")
@@ -42,7 +42,7 @@ public class ResultPage extends BasePage{
         super(driver);
     }
 
-    public Integer get_total_cards() throws InterruptedException {
+    public Integer get_total_cards() {
         wait_for_element_visible(lbelTotalCard);
         String[] totalCards = get_text_of_element(lbelTotalCard).split(" ");
         Integer total = Integer.valueOf(totalCards[0]);

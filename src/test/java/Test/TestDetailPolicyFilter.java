@@ -5,10 +5,12 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.ResultPage;
 
+import java.util.concurrent.TimeUnit;
+
 public class TestDetailPolicyFilter extends TestBase{
 
     @Test(priority = 3)
-    public void test_filter_detail_policy(){
+    public void test_filter_detail_policy() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
 
         homePage.select_tb_insurance();
@@ -18,8 +20,9 @@ public class TestDetailPolicyFilter extends TestBase{
         ResultPage resultPage = new ResultPage(driver);
 
         resultPage.click_on_detail_anual_trip();
-        System.out.println(resultPage.get_insures_menu_list());
-        Assert.assertTrue(resultPage.get_insures_menu_list() =="Pacific Cross");
+        TimeUnit.MILLISECONDS.sleep(5000);
+        System.out.println(resultPage.get_total_cards());
+        Assert.assertTrue(resultPage.get_total_cards() >= 7);
     }
 
 }

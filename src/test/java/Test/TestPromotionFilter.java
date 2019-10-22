@@ -21,7 +21,7 @@ public class TestPromotionFilter extends TestBase {
         Assert.assertTrue(resultPage.get_total_cards() >= 3);
 
         resultPage.click_on_filter_promotion_only();
-        TimeUnit.SECONDS.sleep(5000);
+        TimeUnit.MILLISECONDS.sleep(5000);
         Assert.assertTrue(resultPage.get_total_cards() == 0);
 
     }

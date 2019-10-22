@@ -6,10 +6,9 @@
             <class name="Test.TestShowDefaultCard"/>
             <class name="Test.TestSortLowToHigh"/>
             <class name="Test.TestPromotionFilter"/>
+            <class name="Test.TestDetailPolicyFilter"/>
             <!--<class name="Test.TestSortLowToHigh"/>-->
             <!--<class name="Test.TestDetailPolicyFilter"/>-->
-
-
         </classes>
     </test>
 </suite>
